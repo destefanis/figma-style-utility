@@ -1,0 +1,22 @@
+<h4>Figma Style Utility</h4>
+<p>Select any layer or component to view the developer information regarding that style.</p>
+<!-- <p>Count: <input id="count" value="5"></p> -->
+<!-- <button id="create">Create</button> -->
+<button id="close">Close</button>
+<script>
+
+// document.getElementById('create').onclick = () => {
+//   const textbox = document.getElementById('count');
+//   const count = parseInt(textbox.value, 10);
+//   parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
+// }
+
+onmessage = (event) => {
+  console.log("got this from the main code", event.data.pluginMessage);
+}
+
+document.getElementById('close').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'close' } }, '*')
+}
+
+</script>
